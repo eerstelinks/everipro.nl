@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6" lang="nl"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="nl"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="nl"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="nl"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="nl"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title> Everipro Interior Projects  </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="eerstelinks.nl">
+    <link href="img/favicon.ico.png" rel="shortcut icon">
+
+    <!-- Le styles -->
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet">
+
+    <link href="style/is-visitor%EF%B9%96v=1404163564.css" rel="stylesheet">
+    <link href="assets/fontselect-jquery-plugin/fontselect.css" rel="stylesheet">
+    <link href="css/cache/in-interior-pr/1684154418.css" rel="stylesheet">
+
+
+    <script type="text/javascript">
+        var apiURL        = 'http://everipro.nl/api/v1/';
+        var pathname      = 'in-interior-pr';
+        var alignSexies   = [];
+        var currentLang   = 'nl';
+        var supportedLang = {"nl":{"text":"Nederlands","locale":"nl_NL"},"en":{"text":"English","locale":"en_GB"},"fr":{"text":"Fran\u00e7ais","locale":"fr_FR"},"de":{"text":"Deutsch","locale":"de_DE"},"es":{"text":"Espa\u00f1ol","locale":"es_ES"},"cz":{"text":"\u010ce\u0161tina","locale":"cs_CZ"}};
+        var lang          = {"form":{"modal":{"title":"Wijzig formulier","choose_form":"Kies een formulier","no_title":"Vul een titel in","no_text":"Vul een tekst in","no_title_and_no_text":"Vul een titel en een text in"},"messages":{"send_failure":"Dit formulier kan niet worden opgestuurd, neem contact op.","save_failure":"Mislukt om formlier op te slaan, mail ons even","field_is_required":"verplicht veld","fill_in_fields":"Vul wel alle verplichte velden in, deze zijn aangegeven met een asterisk (*)","no_formname":"Vul een naam in zodat het formulier later nogmaals gebruikt kan worden","invalid_formtype":"Dit type formulier is niet geldig, e-mail ons voor hulp","no_formtype":"Kies een formulier-type","no_product":"Je hebt een bestelformulier geselecteerd, maar geen producten toegevoegd. Voeg een product toe.","no_fields_selected":"Selecteer minimaal 1 veld wat een bezoeker kan invullen bij contactgegevens","no_email":"Vul een e-mailadres in. De inhoud van het formulier wordt daarnaartoe gestuurd.","no_valid_email":"Vul een geldig e-mailadres in. Anders kan je geen berichten niet ontvangen.","no_productname":"Geef je producten een naam"},"buttons":{"send":"Verstuur","close":"Sluiten","order":"Bestel","contact":"Contact","newsletter":"Nieuwsbrief"},"fields":{"name":{"text":"Naam","placeholder":"Naam"},"company":{"text":"Bedrijfsnaam","placeholder":"Naam"},"street":{"text":"Straat + nr.","placeholder":"Adres"},"zipcode":{"text":"Postcode","placeholder":"Postcode"},"city":{"text":"Plaats","placeholder":"Plaats"},"phone":{"text":"Telefoon","placeholder":"+31(0)10-000000"},"email":{"text":"E-mail","placeholder":"e-mail@adres.nl"},"custom":{"text":"Aangepast veld","placeholder":""},"questions":{"text":"Vragen","placeholder":"..."},"remarks":{"text":"Opmerkingen","placeholder":"..."},"other":{"ordered_products":"<p>Bestelde producten:<\/p>","thankyou":"Het formulier is ontvangen.","mail_subject_filled_form":"Ingevuld formulier op ","mail_content_filled_form":"<p>Beste %s,<\/p><p>Op %s is het formulier met de naam %s ingevuld. Dit zijn de gegevens:<\/p>"}}},"plaintext":{"messages":{"no_text":"Vul wel een tekst in"}},"video":{"messages":{"wrong_platform":"Je kan alleen Youtube en Vimeo filmpjes gebruiken. Voer de link (url) in van de pagina van het filmpje."}},"location":{"error_messages":{"wrong_zipcode":"De postcode moet bestaan uit 6 tekens: 1234AB","no_fields":"Vul minimaal 1 veld in"}},"image":{"error_messages":{"save_image_failure":"Mislukt om de bewerkte foto op te slaan","too_large":"Deze afbeelding is te groot, max %d MB","vague":"Er ging iets mis, probeer ander bestand","file_type_failure":"Er gaat iets mis met dit type bestand","aviary_warning":"Het kan zijn dat het bewerken van afbeeldingen tijdelijk niet kan"},"messages":{"upload_image":"Upload een afbeelding (.gif, .jpg, .jpeg of .png)"}},"hours":{"wrong_closure_time":"Sluitingstijd ligt voor de openingstijd op ","closed":"gesloten","by_appointment":"op afspraak"},"date":{"today":"vandaag","days":{"monday":"maandag","tuesday":"dinsdag","wednesday":"woensdag","thursday":"donderdag","friday":"vrijdag","saturday":"zaterdag","sunday":"zondag"}},"document":{"upload_pdf":"Upload een .pdf-bestand"},"favicon":{"upload_ico":"Upload een .ico-bestand"},"contact":{"address":"Adres","phone":"Telefoon","email":"E-mail"},"error_messages":{"file_too_large":"Dit bestand is te groot!","logged_out":"Je bent uitgelogd, log opnieuw in","missing_website":"Je website is niet gevonden","no_id":"Er is geen ID meegegeven","no_block_id":"No block ID defined","no_block_found":"No block found with this ID: ","invalid_id_get":"ID is not valid in GET request","no_website_id":"No website ID found in URL","no_table_found":"Table for block not found: ","no_sexy_id":"Geen sexy ID gevonden","no_sexy":"Geen sexy gevonden","required_fields":"Heb je alle verplichte velden ingevuld?","no_sexy_created":"Maak eerst een nieuwe sectie aan","no_website_created":"Het lijkt er op dat er geen website is aangemaakt","no_column_created":"Maak eerst een nieuwe kolom aan","media_undefined":"Geef wel aan of dit een media-element is","inexistent_column":"Deze kolom bestaat niet, probeer een andere","inexistent_sexy":"Deze sectie bestaat niet, probeer een andere","no_data_found":"Whoepsie, geen gegevens gevonden","element_failure":"Sorry, dit element kan je nog niet bewerken","change_failure":"Deze wijziging komt niet goed door","wrong_request":"The AJAX request is wrong and cannot be answered","delete_element_failure":"Er zijn geen elementen verwijderd","delete_sexy_failure":"Er zijn geen secties verwijderd","no_email":"Vul wel een e-mailadres in","wrong_email":"Dit e-mailadres kan geen e-mails ontvangen, gebruik een echt e-mailadres'","no_email_no_password":"Vul wel je e-mailadres en je wachtwoord in!","spambot":"Je lijkt een spambot","signup_failure":"Mislukt om je aan te melden, mail ons even","cookies":"Het lijkt erop dat je cookies blokkeert, herlaad de pagina.","save_to_database":"Het opslaan in de database is niet gelukt","vague":"Er gaat iets mis!"},"column_change":{"error_messages":{"no_side_chosen":"Geef wel een zijde aan waar de kolom moet komen","max_6_columns":"Er mogen maximaal 6 kolommen geplaatst worden","add_column_failure":"Het toevoegen van de kolom is niet helemaal gelukt"}},"save_demo":{"error_messages":{"no_email":"Vul wel een e-mailadres in, anders kunnen we je jouw site niet opslaan.","no_valid_email":"Vul wel een geldig e-mailadres in","no_valid_email_in_the_end":"Het lijkt erop dat jouw e-mailadres niet klopt, probeer het met een ander e-mailadres."},"messages":{"website_saved_header":"Jouw website is opgeslagen!","website_saved_message":"<p>Houd de inbox van <em>%s<\/em> in de gaten, er is een e-mail met verdere instructies verzonden.<\/p>","confirmation_email_subject":"Jouw eerstelinks website is opgeslagen","confirmation_email_content":"<p>Hoi %s,<\/p><p>Leuk dat je met ons product aan de slag bent gegaan! Je website is opgeslagen en zal 10 dagen gratis online staan. Om de website later te kunnen wijzigen (en voor de mobiele app) heb je een wachtwoord nodig.<\/p><p><em>Dit wachtwoord kan je aanmaken via de onderstaande link:<\/em><br><a href='http:\/\/eerstelinks.nl\/opslaan\/%s\/%s'>Maak een persoonlijk wachtwoord aan<\/a><\/p><p>Met de app (download hem <a href='http:\/\/eerstelinks.nl\/app'>hier<\/a>) kun je foto's direct vanaf je telefoon op je website plaatsen!<\/p><p>Zelf vinden we ons product fantastisch en we doen er alles aan om ervoor te zorgen dat jij dat ook vindt. Dus als je vragen of opmerkingen hebt horen wij die graag. Je kan ons bereiken via <a href='https:\/\/twitter.com\/eerstelinks'>Twitter<\/a>, <a href='https:\/\/facebook.com\/eerstelinks'>Facebook<\/a> of via <a href='mailto:info@eerstelinks.nl'>e-mail<\/a>.<\/p>"}},"general_settings":{"no_website_name":"Je website heeft een naam nodig!","no_language":"Selecteer minimaal 1 taal"},"signup":{"fill_or_skip":"Vul alle velden in of sla deze stap over","invalid_pathname":"De website link is niet geldig. Probeer iets anders, bijvoorbeeld %s","occupied_pathname":"Deze link is al bezet, kies een andere","no_website_found":"Geen website gevonden met deze code, het kan zijn dat je al een wachtwoord gekozen hebt.","confirmation_email_subject":"Account gegevens voor eerstelinks","confirmation_email_content":"<p>Je account is opgeslagen en dit zijn je gegevens:<\/p><p><ul><li>Website: <a href='%s'>%s<\/a><\/li><li>Gebruikersnaam: %s<\/li><li>Wachtwoord: %s<\/li><\/ul><\/p><p>Je kunt nu inloggen op je eigen website en op onze <a href='http:\/\/eerstelinks.nl\/app'>mobiele app<\/a>. Je website is 10 dagen gratis, daarna gaan we je vragen om een pakket te kiezen. Je kunt <a href='http:\/\/eerstelinks.nl\/#prijzen'>hier<\/a> meer informatie vinden en eventueel alvast een keuze maken.<\/p><p>Dit willen we nog even zeggen: We helpen je graag. Samen met jou willen we een top-website bouwen. Aarzel dan ook niet om je vragen en opmerkingen naar ons door te sturen via <a href='https:\/\/twitter.com\/eerstelinks'>Twitter<\/a>, <a href='https:\/\/facebook.com\/eerstelinks'>Facebook<\/a> of <a href='mailto:info@eerstelinks.nl'>e-mail<\/a><\/p>","signup_success":"Je aanmelding is verwerkt, we nemen snel contact met je op!"},"premium_feature":{"no_name":"De naam van deze feature is niet gevonden","feature_not_found":"Deze feature is niet gevonden, waarschijnlijk is het verlopen","feature_active":"Deze feature is al actief","one_language":"Deze feature kan alleen uitgezet worden als er 1 taal is geselecteerd. Selecteer 1 taal, klik op 'Opslaan' en keer terug naar dit venster om de feature uit te zetten.","activation_email_subject":"De betaalde feature %s is geactiveerd","activation_email_content":"<p>Niets is vervelender dan onverwachte kosten, dus lees deze e-mail goed!<\/p><p>Je hebt zojuist de %s-feature geactiveerd. Dit is een premium-feature en deze kost &euro; %g (excl. BTW) per maand.<\/p><p>De 1<sup>e<\/sup> dag is gratis en zet je de feature vandaag weer uit, dan worden er ook geen kosten berekend.<\/p><p>Besluit je om de feature te blijven gebruiken, dan worden de extra kosten per dag berekend en deze worden tegelijk gefactureerd met de normale abonnementskosten. Betaal je per jaar, dan worden de kosten aan het eind van het betaaljaar in rekening gebracht. Betaal je per maand, dan verschijnen de kosten op de rekening van elke volgende maand.<\/p><p>Is er iets niet helemaal duidelijk, neem dan contact met ons op via <a href='https:\/\/twitter.com\/eerstelinks'>Twitter<\/a>, <a href='https:\/\/facebook.com\/eerstelinks'>Facebook<\/a> of <a href='mailto:info@eerstelinks.nl'>e-mail<\/a>. Wij helpen je graag!<\/p>"},"sexy":{"no_sexy_name":"Vergeet niet om deze sectie een naam te geven. Deze zal zichtbaar zijn in de navigatiebalk"},"tutorial":{"oops":"Oeps, dit kunnen we niet opslaan, of het heeft dezelfde waarde"},"devicechecker":{"outdated_browser_message":"Jouw versie van %s is verouderd! <a href='%s' target='_blank'>Download een nieuwe versie<\/a> voor optimaal gebruik."},"light_in_the_dark":{"step1":"Geef je website hier een naam","step2":"Vul hier de naam van jouw website in","step3":"Klik hier om de gegevens op te slaan","step4":"Hier maak je een pagina aan, wij noemen dat secties","step5":"Vul hier een sectie-naam in, bijvoorbeeld: Welkom","step6":"Klik hier om een achtergrond te kiezen","step7":"Upload een foto van je computer","step8":"Laten we hier wat tekst toevoegen!'","step9":"Klik op deze knop","step10":"Leg kort uit waarom ik deze site straks ga bezoeken","step11":"Laten we hier een foto toevoegen!","step12":"Klik op deze knop","step13":"Zo, nu is het tijd om je site op te slaan!<br><a href='javascript:void(0)' class='btn btn-inverse btn-mini restart-tutorial'><i class='icon-repeat'><\/i> Begin rondleiding opnieuw<\/a>'"},"website2":{"create_sexy":"sectie","logout":"Uitloggen","login_email":"e-mailadres","login_email_placeholder":"je-email@adres.nl","login_password":"wachtwoord","loading":"laden...","move_column_left":"Verplaats kolom naar links","move_column_right":"Verplaats kolom naar rechts","delete_column":"Verwijder deze kolom","add_column":"Voeg kolom toe","add_element":"Voeg een element toe"},"common_functions":{"no_module":"<p>Het lijkt erop dat we nog geen module hebben voor het %s type<\/p>","reload_page":"Herlaad de pagina","address_change":"<td>Wijzig hier je adres<\/td>","facebook_url_not_found":"Facebook URL niet gevonden, wijzig dit","untranslated_text":"Deze tekst is nog niet vertaald, klik op de tekst om het te vertalen. <small>(dit bericht is niet zichtbaar voor bezoekers)<\/small>","signature":"<p>Met vriendelijke groet,<\/p>"},"login":{"general_error":"Er gaat iets met met inloggen, contact us for help","no_connection":"Kan geen verbinding tot stand brengen, contacteer de gratis helpdesk","no_hash":"Wachtwoord kan niet gehashd worden","send_session":"Stuur een sessie mee","no_session_found":"Geen sessies gevonden","login_failure":"Inloggen is mislukt, probeer opnieuw"},"order":{"script_failure":"Het script kan de volgorde niet uitlezen","save_failure":"Mislukt om de sectie-volgorde op te slaan","save_element_order_failure":"Het is niet gelukt de volgorde van elementen op te slaan","no_data":"We hebben geen data ontvangen","function_not_ready":"Deze functie is niet af"}};
+    </script>
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#"> Everipro Interior Projects  </a>
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="#everipro-interior-projects">Everipro Interior Projects</a></li>
+                        <li><a href="#100-maatwerk-meubilair">100% Maatwerk Meubilair</a></li>
+                        <li><a href="#impressies">Impressies</a></li>
+                        <li><a href="#vintageretro-deuren-en-puien">Vintage/Retro deuren en puien</a></li>
+                        <li><a href="#systeemwanden">Systeemwanden</a></li>
+                        <li><a href="#inside-network-interior-projects">Inside Network Interior Projects</a></li>
+                        <li><a href="#foto-galerij">Foto Galerij</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                                                <li>
+                            <a href="javascript:void(0)" class="toggle-toolbox hidden-phone"><i class="icon-wrench icon-white"></i> </a>
+
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div>
+
+            <!-- This is to enter your details to log in to the awesome -->
+            <div class="toolbox hidden-phone container">
+                <form class="form-inline login-form" method="post">
+                    <div class="alert alert-info inlog-error">Jouw versie van deze browser is bij ons onbekend of is verouderd! <a href='http://browsehappy.com/' target='_blank'>Download een nieuwe versie</a> voor optimaal gebruik.</div>                    <input type="hidden" name="pathname" value="in-interior-pr" />
+
+                    <label>e-mailadres</label>
+                    <input type="email" name="username" value="" placeholder="je-email@adres.nl" />
+
+                    <label>wachtwoord</label>
+                    <input type="password" name="password" placeholder="" />
+
+                    <input type="submit" value="log in" class="btn btn-success" />
+                    <img class="default-hide loader-login loader" src="img/loader.gif" alt="laden..." />
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- for modals -->
+    <div class="modal-container"></div>
+
+    <!-- for aviary -->
+    <div id='injection_site'></div>
+
+        <div class="sexy" id="sexy_1035">
+            <div class="jump-to" id="everipro-interior-projects"></div>
+            <div class="glasses">
+                <div class="sexy-up default-hide"><a href="#"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span6 lovebox" data-column="3184"><div class="drag"></div><ul class="shell"><li class="editable" id="6580">
+<div style="text-align: left">
+<img id="image-6580" src="uploads/images/in-interior-pr_20221108081744.jpg" alt="" />
+</div>
+</li></ul></li><li class="span6 art editable"  id="6581" style="background-image: url(uploads/images/in-interior-pr_20221108082801.jpg);" data-column="3183"><div class="drag"></div></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#100-maatwerk-meubilair"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_46">
+            <div class="jump-to" id="100-maatwerk-meubilair"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#everipro-interior-projects"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span12 lovebox" data-column="14"><div class="drag"></div><ul class="shell"><li class="editable" id="1371">
+<p></p><p></p><p>
+
+</p><p><b>Everipro Interior Projects </b></p><p><b><br></b></p>
+
+<p></p>
+
+<p>Vanuit Everipro Interior Projects kunnen wij u een veelheid aan maatwerk- en interieuroplossingen ( toe- )leveren voor zowel <b><i>de zakelijke als de particuliere opdrachtgevers. </i></b></p><p>De in ons assortiment verkrijgbare producten komen in alle gevallen rechtstreeks
+bij de “bron” /producent vandaan. </p>
+
+<p>Wij
+onderhouden nauwe contacten met research en development afdelingen van de
+desbetreffende producenten zodat onze relaties gewaarborgd zijn van de beste en
+meest recente toepassingen.</p>
+
+<p>Ons
+assortiment biedt maatwerk- interieur oplossingen in de volgende producten:</p>
+
+<p><b>Maatwerk in kasten</b> ( draai-, schuifdeur ),
+boekenkasten, dressoirs, persoonlijke berging, werkplek . Industrieel
+geproduceerd door middel van een volledig geautomatiseerd proces.</p>
+
+<p><b>Maatwerk in interieurbouw</b> als het gaat om  individuele/specifieke interieur wensen. Dat
+wil zeggen dat u als klant voor alle mogelijke werkzaamheden van ontwerp,
+kleur- en materiaalkeuze bij ons terecht kunt.  Voor  onder
+meer  balies, pantrys, keukens, bedrijfsrestaurant,
+horeca-inrichting, kasten,  tafels,  custom made meubilair. </p>
+
+<p><b>Maatwerk in zitmeubilair</b> het met eenvoudige elementen creëren
+van zitvormen op maat. Met een andere kijk op zitten, in alle vormen, kleuren
+en materialen. Gevormd naar, en passend in de ruimte. Creaties die door hun
+eigenheid en toepasbaarheid individueel of samen een meerwaarde vormen. De
+ruimte niet alleen vullen, maar ook volmaken, en daardoor meer bieden dan
+zitten alleen.</p>
+
+<p><b>Maatwerk in systeemwanden</b> óf het nu gaat om het eenvoudig
+scheiden van een ruimte óf het compleet verzorgen van wandenplan inclusief
+installatie. Wij bieden een brede keuze in materialen;
+gipsvinyl, melamine met 0-voeg, dubbelglas cassette wanden, enkelglas ( hol-bol
+), dubbelglas met minimale profilering.</p>
+
+<br> <b>Project-meubilair</b> en allerhande interieurelementen.<br><br><br><br><br><br>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#impressies"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_48">
+            <div class="jump-to" id="impressies"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#100-maatwerk-meubilair"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span6 lovebox" data-column="18"><div class="drag"></div><ul class="shell"><li class="editable" id="6590">
+<div style="text-align: left">
+<img id="image-6590" src="uploads/images/in-interior-pr_20221108085903.jpg" alt="" />
+</div>
+</li><li class="editable" id="6593">
+<div style="text-align: left">
+<img id="image-6593" src="uploads/images/in-interior-pr_20221108092104.jpg" alt="" />
+</div>
+</li></ul></li><li class="span6 lovebox" data-column="17"><div class="drag"></div><ul class="shell"><li class="editable" id="6591">
+<div style="text-align: left">
+<img id="image-6591" src="uploads/images/in-interior-pr_20221108090242.jpg" alt="" />
+</div>
+</li><li class="editable" id="6594">
+<div style="text-align: left">
+<img id="image-6594" src="uploads/images/in-interior-pr_20221108092735.jpg" alt="" />
+</div>
+</li><li class="editable" id="1378">
+<div style="text-align: left">
+<img id="image-1378" src="uploads/images/in-interior-pr_20160126162341.jpg" alt="" />
+</div>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#vintageretro-deuren-en-puien"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_951">
+            <div class="jump-to" id="vintageretro-deuren-en-puien"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#impressies"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span12 lovebox" data-column="2871"><div class="drag"></div><ul class="shell"><li class="editable" id="6041">
+<div style="text-align: left">
+<a href="http://eerstelinks.nl/uploads/documents/in-interior-pr_20210118115108.pdf" target="_blank"><img id="image-6041" src="uploads/images/in-interior-pr_20210118083027.jpg" alt="" /></a>
+</div>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#systeemwanden"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_45">
+            <div class="jump-to" id="systeemwanden"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#vintageretro-deuren-en-puien"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span4 lovebox" data-column="12"><div class="drag"></div><ul class="shell"><li class="editable" id="1369">
+<p><b>Everipro Interior Projects</b> is <b>dealer</b> van:</p><p></p><p>Nederlands fabricaat systeemwanden o.a. type cassette horizontaal en verticaal in de uitvoeringen glas/melamine, ook met 0-voeg/gips vinyl en meer, met bijpassende deuropties  </p><p></p><p>
+
+</p><p>Dubbelglas ( volglas ) wandsysteem hierbij worden de convex_concaaf
+geslepen glaspanelen tegenover elkaar geplaatst in een profiel van 100 mm ,met bijpassende deuropties </p><p></p><p>
+
+</p><p>Enkelglas ( volglas ) wandsysteem glaspanelen convex-concaaf geslepen met profielen onder en boven 25mm met bijpassende deuropties </p><p></p><p>Deuropties in kozijn gevat, HPL , Hardglas of Kaderdeuren!</p><p><b>SPECIALS</b></p>glasopdruk: Als finishing touch kunt u op de glazen scheidingswand een 
+decoratieve
+opdruk laten aanbrengen. Bijvoorbeeld uw logo, foto, belettering of een 
+ander ontwerp. U kunt hierbij kiezen voor een stickeropdruk of 
+kristalprint. Een stickeropdruk is vervangbaar terwijl bij kristalprint 
+het inktpigment in het glasoppervlak gefixeerd wordt. Hierdoor is de 
+afbeelding krasvast, UV-bestendig en eenvoudig
+te reinigen.<br><br>Dichte wand met whiteboard en magneetfunctie: 
+Praktische oplossing in diverse ruimten zoals een klaslokaal of 
+vergaderruimte. Ook verkrijgbaar met prikbordfunctie.<br><br>Glasopvullingen:
+ In het glaselement van uw systeemwand kunnen diverse vullingen een link
+ leggen naar de functie van uw ruimte. Er is een scala aan kleuren en 
+sferen verkrijgbaar. Het flexibel afschermen van de ruimte is mogelijk 
+door in het glaselement jaloezieën*, lamellen* of plissés te plaatsen.* indien gewenst op afstand bedienbaar.<br><br>Schuif- spreekloket: Uw 
+receptie of welkomstruimte is pas compleet met een op maat gemaakt 
+schuif-spreekloket voorzien van een balieblad naar keuze.<br><br><br>
+</li></ul></li><li class="span8 art editable"  id="1482" style="background-image: url(images/in-interior-pr_20130516235940.jpg);" data-column="11"><div class="drag"></div></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#inside-network-interior-projects"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_44">
+            <div class="jump-to" id="inside-network-interior-projects"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#systeemwanden"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span6 lovebox" data-column="10"><div class="drag"></div><ul class="shell"><li class="editable" id="1367">
+<p><b>Inside Network Interior Projects </b><br></p><p><br></p><p>Adviseert, begeleidt en bemiddelt voor en namens haar opdrachtgevers bij interieurprojecten of de aanschaf van allerhande interieurelementen.</p>
+<p>Meer dan 25 jaar opgedane ervaring bij interieurprojecten zowel aan de aanbiederskant als aan de advieskant heeft geleid tot een groot NETWERK en een specialistische kennis van deze "markt". </p>
+<p><b>Inside Network Interior Projects</b> kan uw interieurproject begeleiden van initiatief tot en met oplevering óf op onderdelen van dit proces, de keuze is aan u. U krijgt hierbij één aanspreekpunt en U doet waar u goed in bent en laat de rest over aan ons en ons NETWERK-team van specialisten op het gebied van interieurontwerp, werkplek-concepten, engineering, projectmanagement, projectrealisatie ( Turn-Key ) en service & onderhoud. </p>
+<p><b>Expertise, kennis, kunde, klantgericht zijn onze kernwaarden.</b></p><b></b>
+<p><b>Het juiste advies.</b></p><b></b>
+<p><b>De juiste begeleiding.</b></p><b></b>
+<p><b>De scherpste bemiddeling.</b></p>
+<p>Dit biedt u in alle opzichten financiële voordelen. Het bespaart u tijd waardoor u zich volledig kunt richten op uw core-business en het behoedt u voor verkeerde investeringen!</p>
+<p>En dat lijkt ons een meer dan goede reden om een vrijblijvend onderhoud aan te vragen en in een kennismakingsgesprek te bekijken wat wij voor u/elkaar kunnen betekenen.</p>
+<p>Bedankt voor uw interesse en graag tot ziens.</p>
+<p>Met vriendelijke groet, </p>
+<p><b>Inside Network Interior Projects</b></p>
+<p><br></p>
+<p>Eric Ververs</p>
+<p>Consultant/Intermediair Interior Design & Fit-Out</p>
+</li></ul></li><li class="span6 lovebox" data-column="131"><div class="drag"></div><ul class="shell"><li class="editable" id="1488">
+<div style="text-align: left">
+<img id="image-1488" src="images/in-interior-pr_20130516235856.png" alt="" />
+</div>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#foto-galerij"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_177">
+            <div class="jump-to" id="foto-galerij"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#inside-network-interior-projects"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span6 lovebox" data-column="2618"><div class="drag"></div><ul class="shell"><li class="editable" id="5594">
+<div style="text-align: left">
+<a href="http://eerstelinks.nl/uploads/documents/in-interior-pr_20151019143734.pdf" target="_blank"><img id="image-5594" src="uploads/images/in-interior-pr_20151019141736.jpg" alt="" /></a>
+</div>
+</li><li class="editable" id="6040">
+<div style="text-align: left">
+<a href="http://eerstelinks.nl/uploads/documents/in-interior-pr_20160811122852.pdf" target="_blank"><img id="image-6040" src="uploads/images/in-interior-pr_20160811123037.jpg" alt="" /></a>
+</div>
+</li><li class="editable" id="6272">
+<div style="text-align: left">
+<a href="http://eerstelinks.nl/uploads/documents/in-interior-pr_20151016111713.pdf" target="_blank"><img id="image-6272" src="uploads/images/in-interior-pr_20170306164055.jpg" alt="" /></a>
+</div>
+</li></ul></li><li class="span6 lovebox" data-column="2620"><div class="drag"></div><ul class="shell"><li class="editable" id="5599">
+<div style="text-align: left">
+<img id="image-5599" src="uploads/images/in-interior-pr_20151018130307.jpg" alt="" />
+</div>
+</li><li class="editable" id="5598">
+<b>De foto-compilaties geven de diversiteit aan van de mogelijkheden en toepassingen die wij u kunnen bieden.</b><br><br><b>Uw ideeën, wensen en eisenpakket vormen de basis. <br><br>De vertaling naar </b><b>het daadwerkelijke product/uitvoering is onze passie!</b><br><br><b>Samen doen wat Samen kan!</b><b><br><br>Voor meer impressies <a href="https://www.facebook.com/pages/Inside-Network-Interior-Projects/119561044835829?ref=hl" target="_blank">click here</a> en neem een kijkje in ons fotoalbum op onze facebook-pagina!</b><br>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#portfolio"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_47">
+            <div class="jump-to" id="portfolio"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#foto-galerij"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span6 lovebox" data-column="16"><div class="drag"></div><ul class="shell"><li class="editable" id="1374">
+<p><b>Projecten 100% Maatwerk:</b></p><p><b>3Mensio te Bilthoven</b></p><p>Het upgraden van bestaand kantoorpand middels nieuwe vloerbedekking ca. 135m2, het schuren en opnieuw oliën van bestaand parket. Het schilderen van muren ca.305m2, plafonds ca. 173m2 en 9 deuren.</p><p><b>Blauwhoed BV te Amsterdam<b><br></b></b></p><p>Naar een ontwerp van Gabrielle Nieuwland. Uitvoering : pvc vloeren, karpet, schilderen, pantry's upgraden, werkplekken, stoelen, maatwerk tafels en onderstellen, maatwerk stalen vakkenkasten, kinderhoek, koffiebar, verlichting armaturen en accessoires.</p><p><b>Meijer Realty Partners Den Haag<br></b></p><p>Betreft 100% Maatwerk 
+produceren,  toeleveren en plaatsen t.b.v. kantoor. Directie  kastenwand 2300mm hg x 6000br, maatwerk koffiecorner, elektrisch verstelbare zit/sta bureaus. Wanden voor vergaderkamer met industriële look. Maatwerk vergadertafel,  lounche zithoek, akoestische plafondpanelen. Schilderwerk<br></p><p><b>Tetrix/IT's Me Haarlem<br></b></p><p>Betreft 100% Maatwerk produceren,  toeleveren en plaatsen t.b.v. kantoor met 24personen. 10m1 draaideur  kastenwand 2300mm hg, 12 klant specifiek ontwikkelde bureau-dragende  onderkasten 1820 x 780 x 565mm met aan weerszijde schuifdeurtjes en met  geïntegreerde laden. Diverse dressoirs voor managers-  en  vergaderkamers.</p><p></p><p><b></b></p><p><b>Prime Polymers te Oosterhout</b></p><p>Coffee-corner geleverd en geplaatst. Maatwerk pantry-meubel voorzien van
+ koelkast en praktische bergruimte in combinatie met een bar/statafel 
+voor de informele gesprekken, korte meetings in even een andere sfeer! 
+In samenwerking met onze partners Nissewaard Totaalbouw en Design Meubelbouw 2000.</p><p><b>Delta Hotel te Vlaardingen</b></p><div> Ten behoeve van drie nieuwe kamers, 1 suite en 2 lofts het custom-made meubilair geleverd en diverse andere interieur elementen zoals karpetten, canvasdoeken, gordijnen en de tv's. Inside Network Interior Projects is tevens als projectcoördinator het vaste aanspreekpunt geweest tussen het management van het Delta Hotel en de aannemer NISSEWAARD TOTAALBOUW BV. </div><p><b><br></b></p><p><b>Jansen en Jansen te Leiden<br></b></p><p>
+
+</p>In opdracht het 
+leveren en plaatsen van vier maatwerk pantrys voor de Main-Building en een maatwerk keuken/pantry voor de Cube.<br><br><p><b>AXIANS CS te Capelle a/d IJssel</b></p><p>Naar een ontwerp van Hilma van Zanten van <a target="_blank" href="https://www.facebook.com/coloridentity.nl">Color identity</a> en geleverd en geplaatst met Design Meubelbouw 2000
+ Media voorzetwand ten behoeve van een 75inch monitor een  wandmeubel 
+voorzien van een nis ten behoeve van een video-wall en een 
+koffie/printermeubel met koelkast ten behoeve van de ontvangst ruimte 
+van de directievleugel.</p><p><b>STEBRU te Rotterdam</b></p><p>In samenwerking met onze 
+partner voor  Maatwerk zit-oplossingen Davant het toeleveren van ca. 15 
+m1 “treinbanken”  in twee u-opstellingen. Uitgevoerd in welded vinyl met 
+BIG Diamond op de rug. Tevens kleuradvies verzorgt. </p><p><b>Tetrix/IT's Me Rotterdam<br></b></p><p>Betreft 100% Maatwerk produceren, 
+toeleveren en plaatsen t.b.v. kantoor met 33 personen. 10m1 draaideur 
+kastenwand 2300mm hg, 14 klant specifiek ontwikkelde bureau-dragende 
+onderkasten 1820 x 780 x 565mm met aan weerszijde schuifdeurtjes en met 
+geïntegreerde laden. Diverse dressoirs voor managers-  en 
+vergaderkamers.</p><p><b>Wilhelmsen Ships Services te Rotterdam Albrandswaard<br></b></p><p> In opdracht het leveren en plaatsen van een maatwerk balie op vlonder en twee hoogte 
+verstelbare werkplekken voor de baliemedewerkers. Tevens 2 nissen 
+voorzien van bijpassende draaideuren en legplanken! <br></p><p><b>Crucell te Leiden<br></b></p><p>
+
+</p><p>In opdracht het 
+leveren en plaatsen van diverse maatwerk schuifdeurkasten ten behoeve van meerdere voorraadkamers.<br></p><b>Brandweer Schiedam</b><p>
+
+</p><p>In opdracht het
+leveren en plaatsen van maatwerk TV-Audio wandmeubel, 12 stuks Relaxfauteuils t.b.v. de algemene personeelsruimte. En 8 maatwerk garderobekasten
+bestaande uit 24 units voor de duikpakken van het Regionaal Duikteam.</p><p>
+
+</p><p><strong></strong></p><p><b>Unimove BV te Rotterdam</b></p><p>In opdracht het leveren en plaatsen van twee maatwerk pantries</p><p><strong></strong></p><p><b>IMTO Benelux BV te Rotterdam</b></p><p>In opdracht het leveren en plaatsen van een interieur: Maatwerk brugelement, 8 werkplekken met cpu-houders, diverse maatwerk kasten.</p><p><b>Imtech ICT te Capelle a/d IJssel</b></p><p>Het leveren en plaatsen van een coffee-corner naar een ontwerp van Hilma van Zanten van Studio H Interieurontwerp.Maatwerk koffie-meubel voorzien van greeploos 3 laden en 2 draaideuren inclusief een achterwand met een speciale foto-print. Een Statafel 2200 x 1100 x 700 met 6 design krukken.</p><p><b>Tetrix/Routeco te Best</b></p><p>Betreft QUOS 100% Maatwerk produceren, toeleveren en plaatsen 10m1 draaideur kastenwand 2300mm hg. Klant specifiek ontwikkelde bureau-dragende onderkasten 1820 x 500 x 565mm. Diverse dressoirs voor managers-kamers en half hoge draaideur kasten</p><p><b>Cazdak Dakbedekkingen BV te Barendrecht</b></p><p>In opdracht het leveren en plaatsen van een interieur: Maatwerk pantries groot en klein, speciale statafels met rvs-onderstellen, 10 werkplekken met cpu-houders, diverse maatwerk kasten waaronder ruimte scheidende kasten 2700 x 1600 x 800 met aan 2 kanten deuren en kast ingebouwd in een nis van 2700 x 2500.</p><p><b>Verhagen Concept VVE te Vlaardingen</b></p><p>In opdracht het leveren en plaatsen van een interieur: maatwerktafel van 6300 x 1800 t.b.v. werkplekken, schuifwand van ca. 10m1, pantry, diverse maatwerk kasten, balie-schuifdeurkast en een enkelglas entree voorziening met enkelglas deur.<b><br></b></p><p><b>Hurkens Transport & Expeditie</b></p><p>In opdracht het leveren en plaatsen van een interieur: werkplekken met alle toebehoren zoals monitorarmen en cpu-houders, bureaustoelen, schuifwand met interieur en een?pantry. Directiekamer met maatwerk gevelkasten, dressoir en bureau.</p><p><b>Delta Hotel Vlaardingen</b></p><p>Opdracht voor het leveren en plaatsen van 2 stuks 100% maatwerk koffiemeubelen.</p><p><b>Zonnehuisgroep Vlaardingen</b></p><p>Gerealiseerd voor QUOS 100% maatwerk, opdracht voor het produceren en leveren van 68 stuks garderobekasten.</p><p><b>Tetrix Es Venlo</b></p><p>Betreft 100% Maatwerk produceren, toeleveren en plaatsen t.b.v. kantoor met 28 personen. 20m1 draaideur kastenwand 2300mm hg, 14 klant specifiek ontwikkelde bureau-dragende onderkasten 1820 x 780 x 565mm met aan weerszijde schuifdeurtjes en met geïntegreerde laden. Diverse dressoirs voor managers-kamers en vergaderkamers</p><p><b>Kapsalon Johan van Schaijk te Vlaardingen</b></p><p>In opdracht het leveren en plaatsen van een interieur t.b.v een kapsalon; werkstations, kassameubel, pantry-kast met tv en een bezoekerstafel met stoelen</p><p><b>Export België</b></p><p>In opdracht van IOF het produceren, toeleveren en plaatsen van diverse maatwerk; interieurkasten, dressoirs, balie, en wachtmeubilair.</p><p><b>LOHC Hockeyclub Oegstgeest</b></p><p>Produceren, leveren en plaatsen van Bar-meubel QUOS 100% Maatwerk.</p><p><b>Proles/Dijkstra Bouwcenter</b></p><p>Produceren, leveren en plaatsen van 100% QUOS maatwerk. "balie-schuifdeurkast" van ca 20m1 in Den Haag</p><p><b>Hoogerwerf for Office/Rijk Zwaan</b></p><p>Produceren, toeleveren en plaatsen van 100% QUOS maatwerk. Schuifdeurkasten</p><p><b>INZA Interieur Zaken Vlaardingen</b></p><p>Produceren, leveren en plaatsen van 100% QUOS maatwerk. Hoge wandkasten, "gevel"dressoirs,kasten ten behoeve van stalenboeken etc.., bureau- vergader- en luch/ontvangsttafels, printerkasten.</p><p><b>Swan-products & At Your Office: Project Amsterdam</b></p><p>Produceren, toeleveren van 100% QUOS maatwerk. Speciale "brugelementen ten behoeve van 24 werkplekken.</p><p><b>Tetrix/NBK Forwarding</b></p><p>Produceren, toeleveren en plaatsen van 100% QUOS maatwerk. Directie meubels ( dressoir en bladdragende kast ), kastenwanden en maatwerk pantry.</p><p><b>Tetrix/EsEindhoven</b></p><p>Produceren, toeleveren en plaatsen diverse 100% QUOS maatwerk kasten combinaties voor een vestiging van Ehrbecker Schiefelbusch</p><p><b>CS Styling</b></p><p>In opdracht van CS Styling zorgdragen voor de levering van 74 zitplaatsen restaurant meubilair met tafels, 4 lage zitgroepen en 120 zitplaatsen terrasmeubilair met tafels. Dit alles ten behoeve van een zorginstelling.</p><p><b>VAB/BTB</b></p><p>Quos 100% Maatwerk, ontwerp, productie en levering van maatwerk kasten voor een relatie van dealer VAB</p><p><b>INZA/Mobion</b></p><p>Quos 100% Maatwerk, ontwerp, productie en levering van maatwerk balies t.b.v van een winkelketen</p><p><b>Doorn&Salari Makelaardij</b></p><p>Het leveren en plaatsen van werkplekken en maatwerk kasten ten behoeve van een nieuw in te richten kantoor</p><p><b>Tetrix/Neele Logistics</b></p><p>Quos 100% maatwerk voor kantoor met 100 medewerkers ca. 90 stuks kastwand elementen ( met een totale capaciteit van ca. 274m1 aan legborden ) in hoogtes van 1100/2300/2600mm. Onder andere Vier "space-dividers" in combinaties van hoog 2300mm en laag 1100mm een diepte van 900mm met aan weerszijde draaideuren. Drie stuks pantry/coffee-corners afgescheiden d.m.v. Wanden 1600mm hoog. 100% maatwerk, 100% Nederlands Product!</p><p><b>Willem Weller Kantoorinrichting & Meer</b></p><p>Quos 100% Maatwerk, ontwerp, productie en levering van maatwerk entree bestaande uit glazen schuifdeursysteem in combinatie met links een vitrinekast voorzien van glazen legborden en verlichting en rechts een pantry-voorziening in een vouwdeurkast. Functioneel Design!!</p><p><b>Strukton/Bredeschool Nesselande</b></p><p>Inside Network Interior Projects bemiddelde en draagt zorg voor het produceren en leveren van 13 stuks custom made studie-meubels 1800 x 1800 mm opgebouwd uit 54mm blank gelakt multiplex met tafeltop voorzien van forbo-desktop.</p><p><b>Strukton/Bredeschool Nesselande</b></p><p>Quos 100% maatwerk 12 garderobe kastenwanden met een capaciteit om ca. 900 leerlingen hun jassen een plekje te geven. 12 boekenkasten met een totale capaciteit van ca 108m1. 12 pantry blokken. Materiaal uitvoeringen 19-38 mm multiplex en multiplex voorzien van HPL.</p><p><b>Tetrix/EsElektro den Bosch</b></p><p>Quos 100% maatwerk voor kantoor met 35 medewerkers. 43 kastenwanden in combinaties van 1/2/3 en 4, persoonlijke berging in de vorm van â€œbrugelementenâ€ tussen de werkplekken. Dressoirs en bladdragende kasten t.b.v. managers en diverse losse kastelementen.</p><p><b>Hoogerwerf For Office</b></p><p>Quos 100% maatwerk. Wandmeubel met geintergreerd Flatscreen wand en kastelement t.b.v. koffiemachine met opbergmogelijkheden. Balie-element voorzien van schuifdeuren.</p><p><b>ACN Europe Rotterdam</b></p><p>100m2 volglas Faram systeemwanden P600/systeemplafonds/ 20 werkplekken/stoffering/maatwerk kasten en projectmanagement.</p><p><br></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</li></ul></li><li class="span6 lovebox" data-column="516"><div class="drag"></div><ul class="shell"><li class="editable" id="1956">
+<p><b>Projecten Systeemwanden:</b></p><p><b>Brainbay B.V. te Utrecht</b></p><p>Het leveren en plaatsen van ca. 75m2 wanden. Enkelglas scheidingswanden met transparante flushverbinding in combinatie met gesloten wanden melamine met een 0-voeg. Volglas draaideuren voorzien van valdorpels. Gesloten wanden voorzien van frameloze whiteboarden en TV schermen </p><p><b>VTTI onderdeel van
+VITOL</b></p>
+
+<p>Het leveren en plaatsen
+van Faram scheidingswanden type P900 dubbelglas met dubbelglas draaideur. Uitbreiding op bestaande wanden<br></p><p><b>CFI Projectinrichting<br></b></p><span>In opdracht van CFI projectinrichting leveren en plaatsen, bij NTI Maasdijk, van Theba Uni Systeemwanden:  3000mm hg dubbelglas cassettewanden met <br>gesloten melamine wanden met een 0-voeg en HPL deuren. Tevens een bestaande wandsysteem aangepast en deels verplaatst.<br><br></span><p><b>Hienfeld te Diemen</b></p><p><span>In samenwerking met mijn partner IOF ( Faram Belux ) het leveren en plaatsen 140m2 systeemwand. Faram P900 systeemwand, dubbelglas met polycarbonaat profielen, 90 graden dubbelglas hoekverbindingen, dubbelglas draaideuren 50mm en dubbelglas schuifdeuren 50mm die in de glaspui wegschuiven.<br></span><b><br></b><b>Verhagen Concept VVE te Vlaardingen</b></p><span>In opdracht van en in samenwerking met INZA te Vlaardingen, leveren en plaatsen van en een enkelglas entree voorziening met enkelglas deur ( voorzien van een speciaal code-kruk slot ) en een glazen schuifloket op een "balie"-schuifdeurkast.<br></span><b><br>Proles/Dijksta
+Bouwcenter<br></b><b><br></b>
+
+<p>Leveren en plaatsen
+van Theba-unisystemen, enkelglas wand met deur op de
+"balie-schuifdeurkast. Uitgevoerd in 10mm Hol/Bol geslepen glas in
+combinatie met 25mm profielen en maatwerk deurkozijn aluminium geborsteld!</p><p><b>VTTI onderdeel van
+VITOL</b></p>
+
+<p>Het leveren en plaatsen
+van Faram scheidingswanden type P900 dubbelglas met dubbelglas draaideur</p><p><b>ACN Europe Rotterdam</b></p>
+
+<p>100m2 volglas Faram
+systeemwanden P600/systeemplafonds/ 20 werkplekken/stoffering/maatwerk kasten
+en projectmanagement.</p>
+
+<p><b>Bank of China
+Rotterdam</b></p>
+
+<p>100m2 volglas Faram
+systeemwanden P600</p>
+
+<p><b>BDO Rotterdam</b></p>
+
+<p>150m2 volglas Faram
+systeemwanden P600</p>
+
+<p><b>British Telecom
+Amsterdam Zuid-Oost</b></p>
+
+<p>4000m2 Faram systeemwanden
+P500 melamine en flush-glass</p>
+
+<p><b>Doorn&Salari
+Vastgoed Schiedam</b></p>
+
+<p>250m2 volglas Faram
+systeemwanden P600 werkplekken/directiekamers/</p>
+
+<p>kastenwanden/systeemplafonds/receptie
+balie</p>
+
+<p><b>Dutch Ambassey Ghanna</b></p>
+
+<p>250m2 Faram P500
+dubbelglas systeemwanden</p>
+
+<p><b>EW dienstengroep
+Arnhem</b></p>
+
+<p>200m2 Faram P500
+melamine en dubbelglas systeemwanden/kastenwanden en 35 werkplekken</p>
+
+<p><b>Google HQ Amsterdam</b></p>
+
+<p>200m2 volglas Faram
+systeemwanden P600</p>
+
+<p><b>Linklaters Amsterdam</b></p>
+
+<p>1500m2 Faram
+systeemwanden P500 dubbelglas/staal</p>
+
+<p><b>RHB Rotterdam</b></p>
+
+<p>600m2
+slopen/schilderwerk/E&W/wanden/stoffering/plafonds/</p>
+
+<p>verlichting/werkplekken/kastenwanden
+en projectmanagement</p>
+
+<p><b>Unit4agresso
+Sliedrecht</b></p>
+
+<p>2800m2 Faram
+systeemwanden P500 dubbelglas flush en melamine/</p>
+
+<p>kamer- en
+gangscheidende kastenwanden/ 40 werkplekken</p>
+
+<p><b>Verwelius
+Bouwmaatschappij Huizen</b></p>
+
+<p>300m2 volglas Faram
+systeemwanden P600 Extra-Dry</p>
+
+<p><b>Vitol BV Rotterdam</b></p>
+
+<p>2500m2 Faram systeemwanden P900
+dubbelglas/melamine?</p><br><br>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#partners"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_239">
+            <div class="jump-to" id="partners"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#portfolio"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span3 lovebox" data-column="576"><div class="drag"></div><ul class="shell"><li class="editable" id="5623">
+<div style="text-align: left">
+<a href="http://www.swan-products.nl" target="_blank"><img id="image-5623" src="uploads/images/in-interior-pr_20160126164217.png" alt="" /></a>
+</div>
+</li><li class="editable" id="6328">
+<div style="text-align: left">
+<a href="http://www.kantoorprofi.be" target="_blank"><img id="image-6328" src="uploads/images/in-interior-pr_20170718162650.png" alt="" /></a>
+</div>
+</li><li class="editable" id="6329">
+<br>Onze partner in België<br><br>Kantoor- en projectinrichting met een extra dimensie! Tergelijkertijd zijn ze meer dan dat. Naast werkplekken, opbergruimtes en zitmeubilair leveren ook zij toegevoegde waarde. Met onze samenwerking en daardoor het brede leveringspakket in combinatie met hun slimme dienstverlening zijn we de echte partner voor onze internationale klanten.<br><br>
+</li></ul></li><li class="span3 lovebox" data-column="588"><div class="drag"></div><ul class="shell"><li class="editable" id="2119">
+<div style="text-align: left">
+<a href="http://www.seuren-tafels.nl" target="_blank"><img id="image-2119" src="uploads/images/in-interior-pr_20130603170603.jpg" alt="" /></a>
+</div>
+</li><li class="editable" id="2120">
+<p><br></p><p><br></p><p>Seuren Tafels ontwerpt en fabriceert topkwaliteit maatwerk
+eettafels,           salontafels, wandtafels vergadertafels en zijn verkrijgbaar in vele houtsoorten. </p>
+</li><li class="editable" id="2133">
+<div style="text-align: left">
+<a href="http://www.coloridentity.nl" target="_blank"><img id="image-2133" src="uploads/images/in-interior-pr_20140814195135.png" alt="" /></a>
+</div>
+</li></ul></li><li class="span3 lovebox" data-column="589"><div class="drag"></div><ul class="shell"><li class="editable" id="2117">
+<div style="text-align: left">
+<a href="http://www.davant.nl" target="_blank"><img id="image-2117" src="uploads/images/in-interior-pr_20130603170358.jpg" alt="" /></a>
+</div>
+</li><li class="editable" id="2128">
+<div style="text-align: left">
+<a href="http://www.unicagrind.nl" target="_blank"><img id="image-2128" src="uploads/images/in-interior-pr_20140808094223.jpg" alt="" /></a>
+</div>
+</li><li class="editable" id="5256">
+<div style="text-align: left">
+<a href="http://www.raynbeau.nl" target="_blank"><img id="image-5256" src="uploads/images/in-interior-pr_20140830102753.jpg" alt="" /></a>
+</div>
+</li><li class="editable" id="5257">
+<p>Kleurrijke animaties op canvasdoek die kinderen aanspreken.<br>Voor op de kinderkamer.. als kraamcadeau... voor verjaardagen óf zomaar....<br><br></p>
+</li></ul></li><li class="span3 lovebox" data-column="590"><div class="drag"></div><ul class="shell"><li class="editable" id="6516">
+<div style="text-align: left">
+<img id="image-6516" src="uploads/images/in-interior-pr_20210119153703.jpg" alt="" />
+</div>
+</li><li class="editable" id="2126">
+<div style="text-align: left">
+<a href="http://www.eerstelinks.nl" target="_blank"><img id="image-2126" src="uploads/images/in-interior-pr_20130603171232.png" alt="" /></a>
+</div>
+</li><li class="editable" id="2127">
+<p>Eerstelinks webprogrammeurs
+met een passie voor het internet! </p>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down "><a href="#contact"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+        <div class="sexy" id="sexy_76">
+            <div class="jump-to" id="contact"></div>
+            <div class="glasses">
+                <div class="sexy-up "><a href="#partners"><i class="icon-circle-arrow-up"></i></a></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="row inner">
+<li class="span4 art editable"  id="1465" style="background-image: url(images/in-interior-pr_20130517000352.png);" data-column="113"><div class="drag"></div></li><li class="span4 lovebox" data-column="114"><div class="drag"></div><ul class="shell"><li class="editable" id="1467">
+<h4><b>Contact</b><br></h4>
+</li><li class="editable" id="1460">
+<form method="post" class="visiterForm"><div class="alert alert-info default-hide">Er gaat iets mis!</div><input type="hidden" name="formId" value="35"><input type="text" class="default-hide" name="super" value=""><table style="width: 100%"><tr><td><label>Naam <span class="muted">*</span></label></td><td><input class="input-block-level" type="text" name="name" placeholder="Naam"></td></tr><tr><td><label>Bedrijfsnaam</label></td><td><input class="input-block-level" type="text" name="company" placeholder="Naam"></td></tr><tr><td><label>Straat + nr. <span class="muted">*</span></label></td><td><input class="input-block-level" type="text" name="street" placeholder="Adres"></td></tr><tr><td><label>Postcode <span class="muted">*</span></label></td><td><input class="input-block-level" type="text" name="zipcode" placeholder="Postcode"></td></tr><tr><td><label>Plaats <span class="muted">*</span></label></td><td><input class="input-block-level" type="text" name="city" placeholder="Plaats"></td></tr><tr><td><label>Telefoon <span class="muted">*</span></label></td><td><input class="input-block-level" type="text" name="phone" placeholder="+31(0)10-000000"></td></tr><tr><td><label>E-mail <span class="muted">*</span></label></td><td><input class="input-block-level" type="email" name="email" placeholder="e-mail@adres.nl"></td></tr><tr><td><label>Opmerkingen <span class="muted">*</span></label></td><td><textarea class="input-block-level" rows="5" name="remarks"></textarea></td></tr></table><span class="help-block">* verplicht veld</span><input type="submit" class="btn" value="Verstuur" /></form>
+</li></ul></li><li class="span4 lovebox" data-column="117"><div class="drag"></div><ul class="shell"><li class="editable" id="1463">
+<p><b>NAW:</b></p><p><b>Everipro Interior Projects</b><b></b><i></i><br></p><p><b></b></p><p><b>&<br></b></p><p><b></b></p><p><b>I</b><b>nside Network Interior Projects </b><b></b><i></i><br></p><p>Jean Monnetring 26</p><p>3137 DC Vlaardingen</p><p>email: info@everipro.nl<br></p><p>email: in.interior.pr@gmail.com</p><p>mob : 06 24 656 001</p><p><br></p><p>KVK          : 24495830</p><p>BTWnr       : NL113143679B01</p><p>Rabobank  : 1274.87.743</p><p>IBAN         : NL32RABO0127487743</p><p>BICNR       : RABONL2U</p><p><br>Algemene voorwaarden met betrekking tot leveringen, inkopen en dienstverlening zijn u op aanvraag toe te zenden<br></p><p><br></p><br><br>
+</li><li class="editable" id="1464">
+
+</li><li class="editable" id="5648">
+
+</li><li class="editable" id="5650">
+<div style="text-align: left">
+<img id="image-5650" src="uploads/images/in-interior-pr_20160219145238.png" alt="" />
+</div>
+</li></ul></li>                            </ul>
+                        </div>
+                    </div>
+                </div>  <!-- /container -->
+                <div class="sexy-down default-hide"><a href="#"><i class="icon-circle-arrow-down"></i></a></div>
+
+            </div>  <!-- /glasses -->
+        </div>  <!-- /sexy -->
+
+
+<script src="assets/jquery/jquery-1.8.2.min.js"></script>
+<script src="assets/jquery/jquery-ui-1.10.2.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min%EF%B9%96v2.3.1.js"></script>
+<script src="assets/fancybox/jquery.fancybox.pack%EF%B9%96v2.1.4.js"></script>
+
+<script src="js/base.js"></script>
+
+<!-- making the galleries work, this should be above genesis, because
+genesis must still resize the sexy-height afterwards -->
+<script src="js/gallery.js"></script>
+
+<script type="text/javascript">
+<!--
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width >= 768) {
+        document.write('<script type="text/javascript" src="/js/genesis.js"></script>');
+    }
+-->
+</script>
+
+<!-- javascript visible for visiters -->
+<script src="js/visitors.js"></script>
+
+<!-- login script for in toolbar -->
+<script src="js/login.js"></script>
+
+<!-- making the slideshows work -->
+<script src="js/slideshow.js"></script>
+
+<!-- we don't collect your personal data like IP address -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-37603858-11');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
